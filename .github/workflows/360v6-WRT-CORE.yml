@@ -136,7 +136,7 @@ jobs:
           fi
 
           if ${{steps.check-cache.outputs.cache-hit != 'true'}}; then
-            CACHE_LIST=$(gh cache list --key "$WRT_CONFIG-$" | cut -f 1)
+            CACHE_LIST=$(gh cache list --key "$WRT_CONFIG-$WRT_INFO" | cut -f 1)
             for CACHE_KEY in $CACHE_LIST; do
               gh cache delete $CACHE_KEY
             done
@@ -202,7 +202,7 @@ jobs:
         run: |
           cd ./wrt/ && mkdir ./upload/
 
-          cp -f ./.config ./upload/Config-"$WRT_CONFIG"-"$"-"$WRT_BRANCH"-"$WRT_DATE".txt
+          cp -f ./.config ./upload/Config-"$WRT_CONFIG"-"$WRT_INFO"-"$WRT_BRANCH"-"$WRT_DATE".txt
 
           if [[ $WRT_TEST != 'true' ]]; then
             echo "WRT_KVER=$(find ./bin/targets/ -type f -name "*.manifest" -exec grep -oP '^kernel - \K[\d\.]+' {} \;)" >> $GITHUB_ENV
