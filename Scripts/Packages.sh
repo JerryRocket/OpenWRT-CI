@@ -50,7 +50,7 @@ UPDATE_PACKAGE "theme-argon" "jerrykuku/luci-theme-argon" "master"
 #UPDATE_PACKAGE "theme-aurora" "eamonxg/luci-theme-aurora" "master"
 #UPDATE_PACKAGE "aurora-config" "eamonxg/luci-app-aurora-config" "master"
 
-#UPDATE_PACKAGE "homeproxy" "immortalwrt/homeproxy" "master"
+UPDATE_PACKAGE "homeproxy" "VIKINGYFY/homeproxy" "master"
 #UPDATE_PACKAGE "nikki" "nikkinikki-org/OpenWrt-nikki" "main"
 #UPDATE_PACKAGE "openclash" "vernesong/OpenClash" "dev" "pkg"
 #UPDATE_PACKAGE "passwall" "Openwrt-Passwall/openwrt-passwall" "main" "pkg"
@@ -112,7 +112,7 @@ UPDATE_VERSION() {
 }
 
 #UPDATE_VERSION "软件包名" "测试版，true，可选，默认为否"
-#UPDATE_VERSION "sing-box"
+UPDATE_VERSION "sing-box"
 #UPDATE_VERSION "tailscale"
 
 # 引入私有扩展脚本
