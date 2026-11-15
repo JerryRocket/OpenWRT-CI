@@ -11,6 +11,7 @@ find ./feeds/luci/modules/luci-mod-system/ -type f -name "flash.js" -exec sed -i
 #添加编译日期标识
 find ./feeds/luci/modules/luci-mod-status/ -type f -name "10_system.js" -exec sed -i "s/(\(luciversion || ''\))/(\1) + (' \/ $WRT_MARK-$WRT_DATE')/g" {} +
 
+#修改默认WIFI账号密码
 WIFI_UC="./package/network/config/wifi-scripts/files/lib/wifi/mac80211.uc"
 ROUTER_TOOL="./package/emortal/luci-app-router-tool/root/etc/config/router-tool"
 for file in "$ROUTER_TOOL" "$WIFI_UC"; do
